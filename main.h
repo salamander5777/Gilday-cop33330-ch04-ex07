@@ -16,6 +16,7 @@ int main() {
   std::cout << "Input an operation: ";
   std::cin >> operation;
 
+  //Verifies the input of the first operand.
   if(op1 == "1" || op1 == "one"){
     a = 1;
   }
@@ -44,6 +45,7 @@ int main() {
     a = 9;
   }
 
+  //Verifies the input of the second operand.
   if(op2 == "1" || op2 == "one"){
     b = 1;
   }
@@ -72,7 +74,7 @@ int main() {
     b = 9;
   }
 
-
+  //Verifies the input of the operation.
   if(operation == "+" || operation == "plus"){
     math = a + b;
     std::cout << "The computed value of: " << a << "+" << b << " is " << math;
