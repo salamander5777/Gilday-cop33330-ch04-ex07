@@ -6,17 +6,11 @@
 #include <iostream>
 
 //Chapter 4, exercise #7 - (Program that acts similar to a mini-calculator. The program allows the user to input single digit numbers and one of four operators '+', '-', '*', '/')
-int main() {
-  std::string operation, op1, op2;
-  double a, b, math;
-  std::cout << "Input the first operand: ";
-  std::cin >> op1;
-  std::cout << "Input the second operand: ";
-  std::cin >> op2;
-  std::cout << "Input an operation: ";
-  std::cin >> operation;
 
-  //Verifies the input of the first operand.
+//This method verifies the input of the first operand.
+double operand1(std::string op1){
+  double a;
+
   if(op1 == "1" || op1 == "one"){
     a = 1;
   }
@@ -44,8 +38,13 @@ int main() {
   else if(op1 == "9" || op1 == "nine"){
     a = 9;
   }
+  return a;
+}
 
-  //Verifies the input of the second operand.
+//This method verifies the input of the second operand.
+double operand2(std::string op2){
+  double b;
+
   if(op2 == "1" || op2 == "one"){
     b = 1;
   }
@@ -68,13 +67,18 @@ int main() {
     b = 7;
   }
   else if(op2 == "8" || op2 == "eight"){
-    a = 8;
+    b = 8;
   }
   else if(op2 == "9" || op2 == "nine"){
     b = 9;
   }
+  return b;
+}
 
-  //Verifies the input of the operation.
+//This method verifies the input of the operation, and will solve for the solution.
+void solution(std::string operation, double a, double b){
+  double math;
+
   if(operation == "+" || operation == "plus"){
     math = a + b;
     std::cout << "The computed value of: " << a << "+" << b << " is " << math;
@@ -91,4 +95,4 @@ int main() {
     math = a/b;
     std::cout << "The computed value of: " << a << "/" << b << " is " << math;
   }
-} 
+}
